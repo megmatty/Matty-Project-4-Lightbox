@@ -1,0 +1,209 @@
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto Mono', sans-serif;
+}
+
+ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+li {
+	margin: 15px 20px;
+	padding: 0;
+	text-align: center;
+}
+
+img {
+	width: 100%;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 75px;
+	background-color: #fff;
+	text-align: center;
+	padding: 25px 0;
+}
+
+.wrapper {
+	padding-top: 75px;
+}
+
+input {
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	font-size: 1em;
+}
+
+::-webkit-input-placeholder {
+	font-size: 1em;
+	padding-left: 10px;
+	line-height: 1;
+	font-family: 'Roboto Mono', sans-serif;
+}
+
+::-moz-placeholder {
+	font-size: 1em;
+	padding-left: 10px;
+	line-height: 1;
+	font-family: 'Roboto Mono', sans-serif;
+}
+
+:-ms-input-placeholder {
+	font-size: 1em;
+	padding-left: 10px;
+	line-height: 1;
+	font-family: 'Roboto Mono', sans-serif;
+}
+
+
+/*OVERLAY*/
+
+#overlay {
+	background-color: rgba(0, 0, 0, .85);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	display: none;
+	z-index: 999;
+}
+
+#overlay img {
+	margin-top: 100px;
+	width: 275px;
+}
+
+#overlay p {
+	color: #fff;
+	width: 245px;
+	margin: 0 auto;
+	line-height: 1.8;
+	margin-top: 40px;
+	text-align: left;
+}
+
+
+
+/*MEDIA QUERIES*/
+
+@media screen and (min-width: 425px) {
+
+	.grid {
+		max-width: 420px;
+	}
+	
+	img {
+		width: 200px;
+	}
+	
+	li {
+		padding: 0;
+		margin: 0 5px 5px 5px;
+		float: left;
+	}
+	
+	#overlay img {
+		margin-top: 175px;
+		width: 400px;
+	}
+	
+	#overlay p {
+		width: 320px;
+	}
+
+}
+
+
+@media screen and (min-width: 768px) {
+	
+	header {
+		height: 85px;
+		padding: 22px 0;
+	}	
+	
+	.wrapper {
+		padding-top: 85px;
+	}
+	
+	input {
+		width: 33%;
+		height: 30px;
+	}	
+	
+	.grid {
+		max-width: 640px;
+	}
+	
+	li {
+		padding: 0;
+		margin: 0 10px 20px 10px;
+	}
+	
+	img {
+		width: 300px;
+	}
+
+	#overlay img {
+		margin-top: 10%;
+		width: 600px;
+	}
+	
+	#overlay p {
+		width: 500px;
+	}
+	
+}
+
+@media screen and (min-width: 1024px) {
+		
+	img {
+		width: 200px;
+	}
+	
+	header {
+		height: 100px;
+		padding: 25px 0;
+	}
+	
+	.wrapper {
+		padding-top: 100px;
+	}
+	
+	input {
+		width: 460px;
+		height: 40px;
+	}
+	
+	li {
+		margin: 0 60px 60px 0;
+		width: 200px;
+		height: 200px;
+	}
+	
+	.grid {
+		max-width: 980px;
+	}
+	
+	/*SOLVE ISSUE OF MEDIA QUERY IN JQUERY FOR 1024 AND ABOVE ONLY*/
+	
+	li:nth-child(4n) {
+		margin-right: 0;
+	}
+		
+	#overlay img {
+		margin-top: 100px;
+	}
+	
+}
