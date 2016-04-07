@@ -95,34 +95,26 @@ input {
 	text-align: left;
 }
 
-#overlay .prev {
+#overlay .prev,
+#overlay .next {
 	background-color: transparent;
 	z-index: 2;
 	border: 0;
 	position: absolute;
 	top: 290px;
-	left: 100px;
 	padding: 5px;
+}
+
+#overlay .prev {
+	left: 100px;
 }
 
 #overlay .next {
-	background-color: transparent;
-	z-index: 2;
-	border: 0;
-	position: absolute;	
-	top: 290px;
 	right: 100px;
-	padding: 5px;
 }
 
-#overlay .lnr-chevron-right {
-	font-family: 'Linearicons-Free';
-	font-size: 20px;
-	font-weight: bold;
-	color: #fff;
-}
-
-#overlay .lnr-chevron-left {
+#overlay .lnr-chevron-right,
+#overlay .lnr-chevron-left  {
 	font-family: 'Linearicons-Free';
 	font-size: 20px;
 	font-weight: bold;
@@ -144,14 +136,10 @@ input {
 		width: 300px;
 	}
 	
-	#overlay .prev {
-		top: 365px;
-	}
-	
+	#overlay .prev,
 	#overlay .next {
 		top: 365px;
 	}
-
 }
 
 @media screen and (min-width: 399px) { /*large phones*/
@@ -165,16 +153,18 @@ input {
 		width: 330px;
 	}
 
-	#overlay .prev {
-		top: 440px;
-		left: 100px;
+	#overlay .prev,
+	#overlay .next {
+		top: 420px;
 		padding: 5px;
+	}
+
+	#overlay .prev {
+		left: 100px;
 	}
 	
 	#overlay .next {
-		top: 440px;
 		right: 100px;
-		padding: 5px;
 	}
 
 }
@@ -245,22 +235,21 @@ input {
 		width: 500px;
 	}
 	
-	#overlay .prev {
-		top: 235px;
-		left: 15px;
+	#overlay .prev,
+	#overlay .next {
+		top: 250px;
 		padding: 8px;
+	}
+	
+	#overlay .prev {
+		left: 15px;
 	}
 	
 	#overlay .next {
-		top: 235px;
 		right: 15px;
-		padding: 8px;
 	}
 	
-	#overlay .lnr-chevron-right {
-		font-size: 40px;
-	}
-	
+	#overlay .lnr-chevron-right,
 	#overlay .lnr-chevron-left {
 		font-size: 40px;
 	}
@@ -310,40 +299,43 @@ input {
 		width: 600px;
 	}
 	
-	#overlay .prev {
+	#overlay .prev,
+	#overlay .next {
 		top: 325px;
+	}
+	
+	#overlay .prev {
 		left: 20px;
 	}
 	
 	#overlay .next {
-		top: 325px;
 		right: 20px;
 	}
 	
-	#overlay .lnr-chevron-right {
+	#overlay .lnr-chevron-right,
+	#overlay .lnr-chevron-left {
 		font-size: 40px;
 	}
 	
-	#overlay .lnr-chevron-left {
-		font-size: 40px;
-	}	
-	
-	/*creates class for 1024 pixel grid js filtering*/
+	/*creates class for 1024 pixel grid JS filtering*/
 	.filtered {
 		margin-right: 60px !important;
 	}
 	
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1400px) { /*Desktops and beyond*/
+	
+	#overlay .prev,
+	#overlay. next {
+		top: 30%;
+	}	
 	
 	#overlay .prev {
-		top: 40%;
 		left: 10%;
 	}
 	
 	#overlay .next {
-		top: 40%;
 		right: 10%;
 	}
 

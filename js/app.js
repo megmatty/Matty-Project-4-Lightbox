@@ -100,7 +100,6 @@ var imgUpdate = function(prev) { //function for updating the overlay img
 
 }
 
-
 //BUTTON FUNCTIONS
 
 //when prevArrow is clicked
@@ -111,9 +110,7 @@ $prevArrow.click(function(event) {
 //when nextArrow is clicked
 $nextArrow.click(function(event) {
 	imgUpdate();
-});
-		
-		
+});		
 
 
 //EXIT OVERLAY BY CLICKING ON IT
@@ -132,5 +129,12 @@ $nextArrow.click(function(event) {
 		//Hide/fade out overlay 
 		$overlay.fadeOut(500);
 	});	
+
+//TO DO
+
+//Find a way to bind arrow keys to prev/next buttons !important
+//Find a way to preload/cache images for overlay scrolling
+//Find a way to only iterate through images displayed from active search
+//MOBILE: Find a way to swipe through photos during overlay and ditch arrows
+//Find a way to show arrows only on mouse hover
 		
-			
