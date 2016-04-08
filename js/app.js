@@ -1,30 +1,3 @@
-//SEARCH
-
-//When text typed in Search box
-	$("#search").keyup(function() {
-	//Take the input and store it in var filter
-		var filter= $(this).val();
-		//Check each image in the gallery
-		$("#imageGallery img").each(function() {
-			//If the alt text of the image doesn't match (< 0) the typed input
-			//"gi" means global(all matches), case insensitive
-			if ($(this).attr("alt").search(new RegExp(filter, "gi")) < 0 ) {
-			
-				//Select all parent elements of img (li, a)
-				$(this).parents("li").fadeOut(1000); //Fade the item out
-				
-			} else {
-			  	$(this).parents("li").addClass('filtered').fadeIn(1000); //Fade it in with new right margin (added by .filtered)
-			}
-			//If the search box is empty			
-			if ( $("#search").val().length < 1) {
-				$(this).parents("li").removeClass('filtered'); //remove the .filtered class to restore margins to normal
-			} 						
-		});				
-	
-	});	
-
-
 //OVERLAY
 
 	// Add overlay, image, caption variables
@@ -72,7 +45,32 @@
 		var captionText = $(this).children("img").attr("alt");
 		$caption.text(captionText);
 	});
+	
+//SEARCH
 
+//When text typed in Search box
+	$("#search").keyup(function() {
+	//Take the input and store it in var filter
+		var filter= $(this).val();
+		//Check each image in the gallery
+		$("#imageGallery img").each(function() {
+			//If the alt text of the image doesn't match (< 0) the typed input
+			//"gi" means global(all matches), case insensitive
+			if ($(this).attr("alt").search(new RegExp(filter, "gi")) < 0 ) {
+			
+				//Select all parent elements of img (li, a)
+				$(this).parents("li").fadeOut(1000); //Fade the item out
+				
+			} else {
+			  	$(this).parents("li").addClass('filtered').fadeIn(1000); //Fade it in with new right margin (added by .filtered)
+			}
+			//If the search box is empty			
+			if ( $("#search").val().length < 1) {
+				$(this).parents("li").removeClass('filtered'); //remove the .filtered class to restore margins to normal
+			} 						
+		});				
+	
+	});	
 
 //PREV_NEXT ARROW NAVIGATION - needs better fades
 var $galleryLength = $("#imageGallery li").length; //holds the length of the gallery list items
@@ -98,7 +96,7 @@ var imgUpdate = function(prev) { //function for updating the overlay img
 	
 	$caption.text(captionText); //set new caption text in overlay
 
-}
+};
 
 //BUTTON FUNCTIONS
 
@@ -112,6 +110,23 @@ $nextArrow.click(function(event) {
 	imgUpdate();
 });		
 
+//Arrow keys for prev/next
+$(document).keydown(function(event) {
+    if (event.which === 37) {
+       imgUpdate(true);
+    } else if (event.which === 39) {
+        imgUpdate();
+    }
+});
+
+//Mobile swipe events
+$('#overlay img').swipeleft(function(event) {
+    imgUpdate(true);
+});
+
+$('#overlay img').swiperight(function(event) {
+    imgUpdate();
+});
 
 //EXIT OVERLAY BY CLICKING ON IT
 
@@ -132,7 +147,7 @@ $nextArrow.click(function(event) {
 
 //TO DO
 
-//Find a way to bind arrow keys to prev/next buttons !important
+//Take out arrows for mobile views <768 now that swiping is working
 //Find a way to preload/cache images for overlay scrolling
 //Find a way to only iterate through images displayed from active search
 //MOBILE: Find a way to swipe through photos during overlay and ditch arrows

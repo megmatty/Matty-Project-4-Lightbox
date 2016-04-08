@@ -7,8 +7,8 @@
 		<title>Image Gallery</title>
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-		<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
-		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen" title="no title">
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title">
 	</head>
 	
 	<body>
@@ -75,6 +75,12 @@
 		</div>
 
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		    $(document).bind('mobileinit',function(){
+		        $.mobile.pushStateEnabled = false;
+		    });
+		</script> <!--apparently makes jquery mobile not error?-->
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 	
 	</body>
