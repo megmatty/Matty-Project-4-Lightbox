@@ -77,11 +77,20 @@ var $galleryLength = $("#imageGallery li").length; //holds the length of the gal
 
 var imgUpdate = function(prev) { //function for updating the overlay img
 
-	if(!prev) {$index++; } //if function not true, iterate forwards
-	else { $index--; } //otherwise, iterate backwards
+	if(!prev) { //if function not true, iterate forwards
+	    $index++; 
+	} 
+	    else {  //otherwise, iterate backwards
+	        $index--; 
+	    } 
 
-	if ($index < 0) { $index = $galleryLength - 1;	} //sets correct index when going backward
-	if ($index >= 12) { $index = 0;	} //loops back to first image
+	if ($index < 0) { //sets correct index when going backward
+	    $index = $galleryLength - 1;	
+	} 
+	
+	if ($index >= 12) { //loops back to first image
+	    $index = 0;	
+	} 
 
 	var newImg = $("#imageGallery li").get($index).getElementsByTagName('a'); //gets anchor tag
 	
@@ -98,22 +107,24 @@ var imgUpdate = function(prev) { //function for updating the overlay img
 
 };
 
-//BUTTON FUNCTIONS
+//OVERLAY IMAGE NAVIGATION
 
-//when prevArrow is clicked
+//When prevArrow is clicked
 $prevArrow.click(function(event) {
 	imgUpdate(true);
+	return false; //keeps overlay from closing when clicking button
 });
 
-//when nextArrow is clicked
+//When nextArrow is clicked
 $nextArrow.click(function(event) {
 	imgUpdate();
+	return false; //keeps overlay from closing when clicking button
 });		
 
 //Arrow keys for prev/next
 $(document).keydown(function(event) {
     if (event.which === 37) {
-       imgUpdate(true);
+        imgUpdate(true);
     } else if (event.which === 39) {
         imgUpdate();
     }
@@ -130,20 +141,14 @@ $('#overlay img').swiperight(function(event) {
 
 //EXIT OVERLAY BY CLICKING ON IT
 
-//when nextArrow is clicked
-	$nextArrow.click(function(event) {
-		return false; //Don't exit
-	});
-//when prevArrow is clicked
-	$prevArrow.click(function(event) {
-		return false; //Don't exit
-	});
-
 //	 When overlay is clicked
 	$overlay.click(function() {
 		//Hide/fade out overlay 
 		$overlay.fadeOut(500);
 	});	
+
+
+
 
 //TO DO
 

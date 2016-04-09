@@ -19,6 +19,7 @@ li {
 }
 
 img {
+    display: block;
 	width: 100%;
 }
 
@@ -82,48 +83,26 @@ input {
 }
 
 #overlay img {
-	margin-top: 100px;
+    display: block;
 	width: 275px;
+	margin: 100px auto 0;
 }
 
 #overlay p {
 	color: #fff;
-	width: 245px;
-	margin: 0 auto;
+	width: 70%;
+	margin: 10px auto 0;
+	font-size: 1em;
 	line-height: 1.8;
-	margin-top: 60px;
 	text-align: left;
 }
 
 #overlay .prev,
 #overlay .next {
-	background-color: transparent;
-	z-index: 2;
-	border: 0;
-	position: absolute;
-	top: 290px;
-	padding: 5px;
+	visibility: hidden; /*hide nav arrows in mobile views*/
 }
-
-#overlay .prev {
-	left: 100px;
-}
-
-#overlay .next {
-	right: 100px;
-}
-
-#overlay .lnr-chevron-right,
-#overlay .lnr-chevron-left  {
-	font-family: 'Linearicons-Free';
-	font-size: 20px;
-	font-weight: bold;
-	color: #fff;
-}
-
 
 /*MEDIA QUERIES*/
-
 
 @media screen and (min-width: 360px) { /*iphone 6*/
 
@@ -133,38 +112,21 @@ input {
 	}
 	
 	#overlay p {
-		width: 300px;
+		width: 75%;
+		max-width: 300px;
 	}
-	
-	#overlay .prev,
-	#overlay .next {
-		top: 365px;
-	}
+
 }
 
-@media screen and (min-width: 399px) { /*large phones*/
-
+@media screen and (min-width: 414px) { /*iphone 6plus*/
+	
 	#overlay img {
 		margin-top: 175px;
-		width: 360px;
+		width: 375px;
 	}
 	
 	#overlay p {
-		width: 330px;
-	}
-
-	#overlay .prev,
-	#overlay .next {
-		top: 420px;
-		padding: 5px;
-	}
-
-	#overlay .prev {
-		left: 100px;
-	}
-	
-	#overlay .next {
-		right: 100px;
+	    max-width: 350px;
 	}
 
 }
@@ -190,10 +152,6 @@ input {
 		width: 400px;
 	}
 	
-	#overlay p {
-		width: 320px;
-	}
-
 }
 
 
@@ -227,33 +185,43 @@ input {
 	}
 
 	#overlay img {
-		margin-top: 10%;
+		margin-top: 150px;
 		width: 600px;
 	}
 	
 	#overlay p {
-		width: 500px;
+		width: 70%;
+    	max-width: 540px;
+		margin-top: 40px;
 	}
 	
 	#overlay .prev,
 	#overlay .next {
-		top: 250px;
+	    visibility: visible;
+		background-color: transparent;
+		z-index: 2;
+		border: 0;
+		position: absolute;
+		top: 310px;
 		padding: 8px;
 	}
 	
 	#overlay .prev {
-		left: 15px;
+		left: 10px;
 	}
 	
 	#overlay .next {
-		right: 15px;
+		right: 10px;
 	}
 	
 	#overlay .lnr-chevron-right,
-	#overlay .lnr-chevron-left {
+	#overlay .lnr-chevron-left  {
+		font-family: 'Linearicons-Free';
 		font-size: 40px;
+		font-weight: bold;
+		color: #fff;
 	}
-	
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -297,6 +265,7 @@ input {
 	
 	#overlay p {
 		width: 600px;
+		max-width: 600px;
 	}
 	
 	#overlay .prev,
@@ -311,12 +280,7 @@ input {
 	#overlay .next {
 		right: 20px;
 	}
-	
-	#overlay .lnr-chevron-right,
-	#overlay .lnr-chevron-left {
-		font-size: 40px;
-	}
-	
+
 	/*creates class for 1024 pixel grid JS filtering*/
 	.filtered {
 		margin-right: 60px !important;
@@ -326,9 +290,14 @@ input {
 
 @media screen and (min-width: 1400px) { /*Desktops and beyond*/
 	
+	#overlay p {
+		font-size: 1.15em;
+		margin-top: 50px;
+	}
+	
 	#overlay .prev,
 	#overlay .next {
-		top: 30%;
+		top: 35%;
 	}	
 	
 	#overlay .prev {
