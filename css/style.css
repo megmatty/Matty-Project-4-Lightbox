@@ -67,6 +67,19 @@ input {
 	font-family: 'Roboto Mono', sans-serif;
 }
 
+input:focus::-webkit-input-placeholder { /*disappears ph text on focus*/
+    color: transparent;
+}
+
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+
+input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+
 
 /*OVERLAY*/
 

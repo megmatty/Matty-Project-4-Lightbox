@@ -4,8 +4,9 @@
 	var $overlay = $('<div id="overlay"></div>');
 	var $image = $("<img>");
 	var $caption = $("<p></p>");
+	var $iframe = $("<iframe></iframe>"); //for video holder?
 	
-	// Index variable for arrows
+	// Counter variable for arrows
 	var $index = 0;
 	
 	// Add arrow variables
@@ -14,6 +15,8 @@
 	
 	//Append image to overlay
 	$overlay.append($image);
+	
+	$overlay.append($iframe); //i guess append the iframe here?
 	
 	//Append buttons to overlay
 	$overlay.append($prevArrow);
@@ -30,10 +33,15 @@
 	$("#imageGallery a").click(function(event) {
 		event.preventDefault(); //prevents link from opening in dead end
 		
-		var imageLocation = $(this).attr("href"); //gets link attribute in variable
+		var imageLocation = $(this).attr("href"); //gets img link attribute in variable
+		var videoLocation = $(this).attr("href"); //gets video link attr?
 		
 		// Update the overlay with the image linked in the link
 		$image.attr("src", imageLocation);
+
+        $iframe.attr("src", videoLocation); //?????no idea if this is right
+
+        //where i get stuck - no idea how to implement video with my existing code
 
 		//Update the index to the current image
 		$index = $(this).parent().index(); 
@@ -112,13 +120,13 @@ var imgUpdate = function(prev) { //function for updating the overlay img
 //When prevArrow is clicked
 $prevArrow.click(function(event) {
 	imgUpdate(true);
-	return false; //keeps overlay from closing when clicking button
+	return false; //keeps overlay from closing when clicking arrow
 });
 
 //When nextArrow is clicked
 $nextArrow.click(function(event) {
 	imgUpdate();
-	return false; //keeps overlay from closing when clicking button
+	return false; //keeps overlay from closing when clicking arrow
 });		
 
 //Arrow keys for prev/next
