@@ -4,7 +4,7 @@
 	var $overlay = $('<div id="overlay"></div>');
 	var $image = $("<img>");
 	var $caption = $("<p></p>");
-	var $iframe = $("<iframe></iframe>"); //for video holder?
+	var $iframe = $('<iframe src="" frameborder="0"></iframe>'); //for video holder?
 	
 	// Counter variable for arrows
 	var $index = 0;
@@ -16,7 +16,7 @@
 	//Append image to overlay
 	$overlay.append($image);
 	
-	$overlay.append($iframe); //i guess append the iframe here?
+//	$overlay.append($iframe); i guess append the iframe here? or append in if statement
 	
 	//Append buttons to overlay
 	$overlay.append($prevArrow);
@@ -28,20 +28,23 @@
 	// Append overlay to body
 	$("body").append($overlay);
 	
-	
 	// Capture click event on a link to an image
 	$("#imageGallery a").click(function(event) {
 		event.preventDefault(); //prevents link from opening in dead end
 		
 		var imageLocation = $(this).attr("href"); //gets img link attribute in variable
-		var videoLocation = $(this).attr("href"); //gets video link attr?
-		
-		// Update the overlay with the image linked in the link
-		$image.attr("src", imageLocation);
+//		var videoLocation = $(this).attr("href"); //gets video link attr? but its the same?
+        
+//      $iframe.attr("src", imageLocation); //?????no idea if this is right
 
-        $iframe.attr("src", videoLocation); //?????no idea if this is right
-
+    // Update the overlay with the image linked in the link
+            $image.attr("src", imageLocation);      
+        
+           
         //where i get stuck - no idea how to implement video with my existing code
+        //add a class ".video" to video a elements
+        //if $(this).hasClass("video") then $iframe.append to overlay
+        //else do the rest of code?
 
 		//Update the index to the current image
 		$index = $(this).parent().index(); 
@@ -52,6 +55,7 @@
 		// Get child img alt attribute and set to caption
 		var captionText = $(this).children("img").attr("alt");
 		$caption.text(captionText);
+		
 	});
 	
 //SEARCH
@@ -96,7 +100,7 @@ var imgUpdate = function(prev) { //function for updating the overlay img
 	    $index = $galleryLength - 1;	
 	} 
 	
-	if ($index >= 12) { //loops back to first image
+	if ($index >= $galleryLength) { //loops back to first image
 	    $index = 0;	
 	} 
 
@@ -160,9 +164,7 @@ $('#overlay img').swiperight(function(event) {
 
 //TO DO
 
-//Take out arrows for mobile views <768 now that swiping is working
 //Find a way to preload/cache images for overlay scrolling
 //Find a way to only iterate through images displayed from active search
-//MOBILE: Find a way to swipe through photos during overlay and ditch arrows
 //Find a way to show arrows only on mouse hover
 		
