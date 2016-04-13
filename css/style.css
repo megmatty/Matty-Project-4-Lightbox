@@ -21,13 +21,6 @@ li {
 img {
     display: block;
 	width: 100%;
-	opacity: 1;
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-
-img:hover {
-	opacity: .5;
 }
 
 header {
