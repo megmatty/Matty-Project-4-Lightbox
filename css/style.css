@@ -21,6 +21,13 @@ li {
 img {
     display: block;
 	width: 100%;
+	opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+img:hover {
+	opacity: .5;
 }
 
 header {
@@ -95,10 +102,15 @@ input:focus:-ms-input-placeholder {
 	z-index: 1;
 }
 
-#overlay img {
+#overlay img,
+#overlay iframe {
     display: block;
 	width: 275px;
 	margin: 100px auto 0;
+}
+
+#overlay iframe {
+    height: 162px;
 }
 
 #overlay p {
@@ -119,9 +131,14 @@ input:focus:-ms-input-placeholder {
 
 @media screen and (min-width: 360px) { /*iphone 6*/
 
-	#overlay img {
+	#overlay img,
+	#overlay iframe {
 		margin-top: 150px;
 		width: 320px;
+	}
+	
+	#overlay iframe {
+	    height: 188px;
 	}
 	
 	#overlay p {
@@ -133,9 +150,14 @@ input:focus:-ms-input-placeholder {
 
 @media screen and (min-width: 414px) { /*iphone 6plus*/
 	
-	#overlay img {
+	#overlay img,
+	#overlay iframe {
 		margin-top: 175px;
 		width: 375px;
+	}
+	
+	#overlay iframe {
+	    height: 221px;
 	}
 	
 	#overlay p {
@@ -160,9 +182,14 @@ input:focus:-ms-input-placeholder {
 		float: left;
 	}
 	
-	#overlay img {
+	#overlay img,
+	#overlay iframe {
 		margin-top: 175px;
 		width: 400px;
+	}
+	
+	#overlay iframe {
+	    height: 235px;
 	}
 	
 }
@@ -196,10 +223,15 @@ input:focus:-ms-input-placeholder {
 	img {
 		width: 300px;
 	}
-
-	#overlay img {
+	
+	#overlay img,
+	#overlay iframe {
 		margin-top: 150px;
 		width: 600px;
+	}
+	
+	#overlay iframe {
+	    height: 353px;
 	}
 	
 	#overlay p {
@@ -271,9 +303,14 @@ input:focus:-ms-input-placeholder {
 		margin-right: 0;
 	}
 		
-	#overlay img {
+	#overlay img,
+	#overlay iframe {
 		width: 800px;
 		margin-top: 100px;
+	}
+	
+	#overlay iframe {
+	    height: 471px;
 	}
 	
 	#overlay p {
