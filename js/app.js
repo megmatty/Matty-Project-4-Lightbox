@@ -1,13 +1,3 @@
-//PRELOAD IMAGES *CSS TRICKS*
-
-$.preloadImages = function() {
-  for (var i = 0; i < arguments.length; i++) {
-    $("<a>").attr("href", "img/".arguments[i]);
-  }
-}
-
-$.preloadImages();
-
 //OVERLAY
 
 	// Add overlay, image, caption, iframe variables
@@ -54,7 +44,7 @@ $.preloadImages();
 	    }
 	
 	    hideItem.hide(); //hide the item based on the met condition
-	    showItem.show().fadeIn(1000); //show the item, fadeout quick then fade back in slow REMOVED .fadeOut(0)
+	    showItem.show().fadeOut(0).fadeIn(1000); //show the item, fadeout quick then fade back in slow
 	
 	    showItem.attr("src", item.attr('href')); //set the src of the item to the link
 	
