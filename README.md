@@ -1,3 +1,5 @@
+# Matty-Project-4-Interactive-Photo-Gallery
+
 Treehouse Project 4 - Interactive Photo Gallery
 
 This is my fourth project for Treehouse Techdegree: Front End Developer. 
