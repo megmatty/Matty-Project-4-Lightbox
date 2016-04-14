@@ -18,6 +18,7 @@ Project notes:
 - Arrows on overlay are replaced by mobile swipe control for small device sizes (via custom jQuery Mobile file)
 
 Needs Work or Need to Learn
+- jQuery Mobile API does some weird things, I don't have a clear text button on my input anymore, for example. Need to learn more about it next time as it had some unintended effects.
 - Need to learn how to adjust overlay for landscape view on mobile devices
 - Would like to learn how to iterate through matched images in overlay when a search filter is active
 - Was able to fade images on search but would like to learn to code sliding or other animations that plugins provide
@@ -26,7 +27,6 @@ Needs Work or Need to Learn
   Need to practice breaking code into requirements and components instead of coding feature by feature in a linear way.
 
 ~Time to complete : HTML/CSS set up in < 2 hours, the rest of 2 weeks was spent primarily on JS coding. Using a 
-lightbox plugin probably would have cut time dramatically but it was important to me to try to code it myself. Seeing
-examples of working similar code was most valuable for me, followed by talking though my thought process.
+lightbox plugin probably would have cut time dramatically but it was important to me to try to code it myself. Seeing examples of working similar code was most valuable for me, followed by talking though my thought process.
 
 -MM
