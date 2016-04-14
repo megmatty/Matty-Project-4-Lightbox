@@ -1,13 +1,3 @@
-//PRELOAD IMAGES *CSS TRICKS*
-
-$.preloadImages = function() {
-  for (var i = 0; i < arguments.length; i++) {
-    $("<a>").attr("href", "img/".arguments[i]);
-  }
-}
-
-$.preloadImages();
-
 //OVERLAY
 
 	// Add overlay, image, caption, iframe variables
