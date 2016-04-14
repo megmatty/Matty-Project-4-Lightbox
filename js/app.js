@@ -1,20 +1,22 @@
-//Preload images *CSS TRICKS*
+//PRELOAD IMAGES *CSS TRICKS*
+
 $.preloadImages = function() {
   for (var i = 0; i < arguments.length; i++) {
     $("<a>").attr("href", "img/".arguments[i]);
   }
 }
 
+$.preloadImages();
 
 //OVERLAY
 
-	// Add overlay, image, caption variables
+	// Add overlay, image, caption, iframe variables
 	var $overlay = $('<div id="overlay"></div>');
 	var $image = $("<img>");
 	var $caption = $("<p></p>");
 	var $iframe = $('<iframe src="" frameborder="0"></iframe>'); //empty video holder
 	
-	// Counter variable for arrows
+	// Add counter variable for slideshow
 	var $index = 0;
 	
 	// Add arrow variables
@@ -41,25 +43,25 @@ $.preloadImages = function() {
 	//Create a function to show the desired gallery item
 	function showGalleryItem(item) {
 	
-	    var item = $(item); //check to see if i need this
+	    var item = $(item); //create a variable for item to reuse
 	    
 	    if (item.hasClass("video") ) { //if the item has a class 'video'
 	        var showItem = $iframe; //define variable to show the iframe
 	        var hideItem = $image; //define variable to hide the image
 	    } else { //if the item is not a video
-	        var showItem = $image; //define variable to show the image
-	        var hideItem = $iframe;//define variable to hide the iframe
+	        var showItem = $image; //redefine variable to show the image
+	        var hideItem = $iframe;//redefine variable to hide the iframe
 	    }
 	
-	    hideItem.hide(); //hide the items based on the met condition
-	    showItem.show().fadeOut(0).fadeIn(1000); //show the items and fadeout quick then fade back in slower
+	    hideItem.hide(); //hide the item based on the met condition
+	    showItem.show().fadeOut(0).fadeIn(1000); //show the item, fadeout quick then fade back in slow
 	
 	    showItem.attr("src", item.attr('href')); //set the src of the item to the link
 	
 	    //Update the index to the current image
 	    $index = item.parent().index();
 	    
-	    //Get child img alt attribute and set to caption
+	    //Get item's children's (img) alt attribute and set to caption
 	    var captionText = item.children("img").attr("alt");
 	    $caption.text(captionText);
 	    
@@ -68,13 +70,13 @@ $.preloadImages = function() {
 	}
 	
 	
-	// Capture click event on a link to an image
+	// Capture click event on a thumbnail link to an image
 	$("#imageGallery a").click(function(event) {
 		event.preventDefault(); //prevents link from opening in dead end
 		
         var item_to_show = $(this); //get THIS link in a variable
 		
-		showGalleryItem(item_to_show); //call function
+		showGalleryItem(item_to_show); //call function to show the item
 
 	});
 	
@@ -83,13 +85,15 @@ $.preloadImages = function() {
 
     //When text typed in Search box
     	$("#search").keyup(function() {
-    	//Take the input and store it in var filter
+    	
+    	    //Take the input and store it in a variable
     		var filter= $(this).val();
-    		//Check each image in the gallery
+    		
+		    //Check each image in the gallery
     		$("#imageGallery img").each(function() {
+
     			//If the alt text of the image doesn't match (< 0) the typed input
-    			//"gi" means global(all matches), case insensitive
-    			if ($(this).attr("alt").search(new RegExp(filter, "gi")) < 0 ) {
+    			if ($(this).attr("alt").search(new RegExp(filter, "gi")) < 0 ) { //"gi" = global(all matches), case insensitive
     			
     				//Select all parent elements of img (li, a)
     				$(this).parents("li").fadeOut(1000); //Fade the item out
@@ -97,23 +101,23 @@ $.preloadImages = function() {
     			} else {
     			  	$(this).parents("li").addClass('filtered').fadeIn(1000); //Fade it in with new right margin (added by .filtered)
     			}
+    			
     			//If the search box is empty			
     			if ( $("#search").val().length < 1) {
-    				$(this).parents("li").removeClass('filtered'); //remove the .filtered class to restore margins to normal
+    				$(this).parents("li").removeClass('filtered'); //remove .filtered to restore margins
     			} 						
     		});				
     	
     	});	
 
 
-
-//PREV_NEXT ARROW NAVIGATION
+//OVERLAY IMAGE NAVIGATION
 
     var $galleryLength = $("#imageGallery li").length; //holds the length of the gallery list items
     
     var imgUpdate = function(move) { //function for updating the overlay img when prev/next clicked
     
-        $index += move;
+        $index += move; //variable to advance or retreat
     
     	if ($index < 0) { //sets correct index when going backward
     	    $index = $galleryLength - 1;	
@@ -130,15 +134,15 @@ $.preloadImages = function() {
         };
 
 
-//OVERLAY IMAGE NAVIGATION
+//PREV_NEXT ARROW FUNCTIONS
 
-    //When prevArrow is clicked
+    //When Left Arrow is clicked
     $prevArrow.click(function(event) {
     	imgUpdate(-1); //move -1
     	return false; //keeps overlay from closing when clicking arrow
     });
     
-    //When nextArrow is clicked
+    //When Right Arrow is clicked
     $nextArrow.click(function(event) {
     	imgUpdate(1); //move +1
     	return false; //keeps overlay from closing when clicking arrow
@@ -153,7 +157,7 @@ $.preloadImages = function() {
         }
     });
     
-    //Mobile swipe events
+    //Mobile swipe events (provided by custom jquery mobile script)
     $('#overlay img').swipeleft(function(event) {
         imgUpdate(-1); //move -1
     });
@@ -161,8 +165,9 @@ $.preloadImages = function() {
     $('#overlay img').swiperight(function(event) {
         imgUpdate(1); //move +1
     });
-    
-    //EXIT OVERLAY BY CLICKING ON IT
+
+
+//EXIT OVERLAY BY CLICKING ON IT
     
     //	 When overlay is clicked
     	$overlay.click(function() {
@@ -175,7 +180,6 @@ $.preloadImages = function() {
 
 //TO DO
 
-//Find a way to preload/cache images for overlay scrolling
 //Find a way to only iterate through images displayed from active search
 //Find a way to show arrows only on mouse hover
 		

@@ -80,7 +80,6 @@ input:focus:-ms-input-placeholder {
 }
 
 
-
 /*OVERLAY*/
 
 #overlay {
@@ -99,7 +98,7 @@ input:focus:-ms-input-placeholder {
 #overlay iframe {
     display: block;
 	width: 275px;
-	margin: 100px auto 0;
+	margin: 30% auto 0;
 }
 
 #overlay iframe {
@@ -117,16 +116,16 @@ input:focus:-ms-input-placeholder {
 
 #overlay .prev,
 #overlay .next {
-	visibility: hidden; /*hide nav arrows in mobile views*/
+	visibility: hidden; /*hide nav arrows in mobile views, use swipe*/
 }
 
 /*MEDIA QUERIES*/
+
 
 @media screen and (min-width: 360px) { /*iphone 6*/
 
 	#overlay img,
 	#overlay iframe {
-		margin-top: 150px;
 		width: 320px;
 	}
 	
@@ -145,7 +144,6 @@ input:focus:-ms-input-placeholder {
 	
 	#overlay img,
 	#overlay iframe {
-		margin-top: 175px;
 		width: 375px;
 	}
 	
@@ -171,13 +169,12 @@ input:focus:-ms-input-placeholder {
 	
 	li {
 		padding: 0;
-		margin: 0 5px 5px 5px;
+		margin: 0 5px 5px;
 		float: left;
 	}
 	
 	#overlay img,
 	#overlay iframe {
-		margin-top: 175px;
 		width: 400px;
 	}
 	
@@ -186,7 +183,6 @@ input:focus:-ms-input-placeholder {
 	}
 	
 }
-
 
 @media screen and (min-width: 768px) {
 	
@@ -219,7 +215,7 @@ input:focus:-ms-input-placeholder {
 	
 	#overlay img,
 	#overlay iframe {
-		margin-top: 150px;
+		margin-top: 15%;
 		width: 600px;
 	}
 	
@@ -240,7 +236,7 @@ input:focus:-ms-input-placeholder {
 		z-index: 2;
 		border: 0;
 		position: absolute;
-		top: 310px;
+		top: 32%;
 		padding: 8px;
 	}
 	
@@ -298,8 +294,8 @@ input:focus:-ms-input-placeholder {
 		
 	#overlay img,
 	#overlay iframe {
+	    margin-top: 10%;
 		width: 800px;
-		margin-top: 100px;
 	}
 	
 	#overlay iframe {
@@ -313,7 +309,7 @@ input:focus:-ms-input-placeholder {
 	
 	#overlay .prev,
 	#overlay .next {
-		top: 325px;
+		top: 37%;
 	}
 	
 	#overlay .prev {
@@ -333,6 +329,11 @@ input:focus:-ms-input-placeholder {
 
 @media screen and (min-width: 1400px) { /*Desktops and beyond*/
 	
+	#overlay img,
+	#overlay iframe {
+		margin-top: 5%;
+	}
+	
 	#overlay p {
 		font-size: 1.15em;
 		margin-top: 50px;
@@ -340,8 +341,8 @@ input:focus:-ms-input-placeholder {
 	
 	#overlay .prev,
 	#overlay .next {
-		top: 27%;
-	}	
+		top: 33%;
+	}
 	
 	#overlay .prev {
 		left: 10%;
