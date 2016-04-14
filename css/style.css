@@ -168,7 +168,6 @@ input:focus:-ms-input-placeholder {
 	}
 	
 	li {
-		padding: 0;
 		margin: 0 5px 5px;
 		float: left;
 	}
@@ -188,11 +187,11 @@ input:focus:-ms-input-placeholder {
 	
 	header {
 		height: 85px;
-		padding: 22px 0;
+		padding: 30px 0;
 	}	
 	
 	.wrapper {
-		padding-top: 85px;
+		padding-top: 95px;
 	}
 	
 	input {
@@ -205,8 +204,17 @@ input:focus:-ms-input-placeholder {
 	}
 	
 	li {
-		padding: 0;
 		margin: 0 10px 20px 10px;
+	}
+	
+	.grow {
+	    -webkit-transition: all .2s ease-in-out;
+	    transition: all .2s ease-in-out;
+	}
+	
+	.grow:hover {
+	    -webkit-transform: scale(1.1);
+	    transform: scale(1.1);
 	}
 	
 	img {
@@ -215,7 +223,7 @@ input:focus:-ms-input-placeholder {
 	
 	#overlay img,
 	#overlay iframe {
-		margin-top: 15%;
+		margin-top: 100px;
 		width: 600px;
 	}
 	
@@ -236,7 +244,7 @@ input:focus:-ms-input-placeholder {
 		z-index: 2;
 		border: 0;
 		position: absolute;
-		top: 32%;
+		top: 275px;
 		padding: 8px;
 	}
 	
@@ -266,11 +274,10 @@ input:focus:-ms-input-placeholder {
 	
 	header {
 		height: 100px;
-		padding: 25px 0;
 	}
 	
 	.wrapper {
-		padding-top: 100px;
+		padding-top: 110px;
 	}
 	
 	input {
@@ -309,7 +316,7 @@ input:focus:-ms-input-placeholder {
 	
 	#overlay .prev,
 	#overlay .next {
-		top: 37%;
+		top: 320px;
 	}
 	
 	#overlay .prev {
@@ -337,11 +344,6 @@ input:focus:-ms-input-placeholder {
 	#overlay p {
 		font-size: 1.15em;
 		margin-top: 50px;
-	}
-	
-	#overlay .prev,
-	#overlay .next {
-		top: 33%;
 	}
 	
 	#overlay .prev {
