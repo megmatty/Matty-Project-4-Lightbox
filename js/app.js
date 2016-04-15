@@ -182,10 +182,4 @@ $.preload( 'img/01.jpg',
     	});	
 
 
-
-
-//TO DO
-
-//Find a way to only iterate through images displayed from active search
-//Find a way to show arrows only on mouse hover
 		
